@@ -3,5 +3,14 @@
   }
   header{
   	background-color: #FFD447;
-  	
+  	text-align: center;
+  	margin: 0;
+  	padding: 0;
+  	height: 100px;
+  }
+  .busqueda{
+  	height: 100px;
+  	margin: 0;
+  	padding: 0;
+  	/*background-color: gray;*/
   }
