@@ -1,28 +1,33 @@
+var cargarPagina = function () {
+	$("#get-location").click(obtenerUbicacion);
+};
 
-function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-  });
+var obtenerUbicacion = function (e) {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(mostrarPosicion);
+	} else {
+		alert("Actualice su navegador");
+	}
+};
+
+var mostrarPosicion = function (posicion) {
+	var coordenadas = {
+		lat: posicion.coords.latitude, 
+		lng: posicion.coords.longitude
+	};
+	mostrarMapa(coordenadas);
+};
+
+var mostrarMapa = function (coordenadas) {
+	var map = new google.maps.Map($('#map')[0], {
+      zoom: 17,
+      center: coordenadas
+    });
+    var marker = new google.maps.Marker({
+      position: coordenadas,
+      map: map
+    });
 }
 
-var obtener = function(){
-	navigator.geolocation.getCurrentPosition(mostrar);
-}
+$(document).ready(cargarPagina);
 
-var mostrar = function(evento){
-	// var $ubicacion=$("#map");
-	console.log(evento);
-	var $latitud= evento.coords.latitude;
-	console.log($latitud);
-
-}
-var cargaPagina = function()
-{
-	obtener();
-	mostrar();
-
-}
-
- 
-$(document).ready(cargaPagina);
