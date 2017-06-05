@@ -4,13 +4,25 @@ function initMap() {
           center: {lat: -34.397, lng: 150.644},
           zoom: 8
   });
-    }
+}
 
+var obtener = function(){
+	navigator.geolocation.getCurrentPosition(mostrar);
+}
+
+var mostrar = function(evento){
+	// var $ubicacion=$("#map");
+	console.log(evento);
+	var $latitud= evento.coords.latitude;
+	console.log($latitud);
+
+}
 var cargaPagina = function()
 {
-	 var map;
-      // initMap();
+	obtener();
+	mostrar();
 
 }
 
+ 
 $(document).ready(cargaPagina);
