@@ -1,35 +1,45 @@
 var arrayRestaurante= [];
 
-function Restaurante (nombre,direccion,coordenadas) {
+function Restaurante (nombre,foto,direccion,coordenadas) {
 	this.nombre = nombre,
+	this.foto= foto,
 	this.direccion= direccion,
 	this.coordenadas = coordenadas
 }
 
-var restaurante = new Restaurante("Terraza del Mayor", "Calle República de Argentina 15 Planta Alta, Cuauhtemoc" ,{latitud: -99.1337437,longitud: 19.435756});
-// var restaurante2 = new Restaurante ("La Bota" , )
-// var restaurante3 = new Restaurante ( "Mog")
+var restaurante = new Restaurante("Terraza del Mayor", " https://goo.gl/XJRhRW","Calle República de Argentina 15 Planta Alta, Cuauhtemoc" ,{latitud: -99.1337437,longitud: 19.435756});
 arrayRestaurante.push(restaurante);
 
-console.log(arrayRestaurante[0]);
-var plantillaRestaurante = 
 
 
+var plantillaRestaurant = "<div class = 'card horizontal'>"+
+						  		"<div class= 'card-image'>"+
+						 			"<img src='__foto__'>"+
+						 		"</div>"+
+						 		"<div class= 'card-stacked'>"+
+						 			"<div class='card-content'>"+
+						 				"<h3>__nombre__</h3>"+
+						 		 		"<p>__direccion__</p>"+
+						 			"</div>"+	 
+						 		"</div>"+
+						 	"</div>";
 
+var mostrarContactos = function (contactos) {
+	var plantillaFinal = "";
+	arrayRestaurante.forEach(function (restaurante) {
+		plantillaFinal += plantillaRestaurant.replace("__nombre__", restaurante.nombre)
+											 .replace("__foto__", restaurante.foto)
+											 .replace("__direccion__", restaurante.direccion);
+			
+	});
+	$("#listaRestaurant").html(plantillaFinal);
+};
 
-
-
-
-
-
-
-var muestraDatos{
-
-}
 
 
 var cargarPagina = function () {
 	$("#get-location").click(obtenerUbicacion);
+	mostrarContactos();
 };
 
 
