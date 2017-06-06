@@ -58,6 +58,7 @@ var busqueda = function (e){
 		$("#listaRestaurant").html($mensaje);
 	}else
 	{
+		
 		mostrar(resultadosBusqueda);
 	}
 	
