@@ -14,9 +14,13 @@
   	padding: 0;
   	/*background-color: gray;*/
   }
+
   #map{
-  	height: 200px;
+  	height: 50vh;
   }
   .centrar{
   	text-align: center;
   }
+  /*h3{
+  	cursor: pointer;
+  }*/
