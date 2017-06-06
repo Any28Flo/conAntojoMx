@@ -8,7 +8,11 @@ function Restaurante (nombre,foto,direccion,coordenadas) {
 }
 
 var restaurante = new Restaurante("Terraza del Mayor", " https://goo.gl/XJRhRW","Calle República de Argentina 15 Planta Alta, Cuauhtemoc" ,{latitud: -99.1337437,longitud: 19.435756});
+var restaurante2 = new Restaurante("La  Barranca Valenciana","img/valenciana.jpg","Av. Centenario 91 C, Coyoacan, Del Carmen" ,{latitud: 19.3523942,longitud: -99.1656628});
+var restaurante3 = new Restaurante("Salon corona", "img/corona.jpg" , "Paseo de la Reforma 453, Cuauhtémoc",{latitud: 19.3523942,longitud: -99.1656628});
 arrayRestaurante.push(restaurante);
+arrayRestaurante.push(restaurante2);
+arrayRestaurante.push(restaurante3);
 
 
 
