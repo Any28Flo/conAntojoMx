@@ -1,7 +1,8 @@
  html {
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+	font-family: 'Bubbler One', sans-serif;
   }
   header{
+  	font-family: 'Mogra', cursive;
   	background-color: #FFD447;
   	text-align: center;
   	margin: 0;

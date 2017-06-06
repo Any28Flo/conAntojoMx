@@ -1,3 +1,13 @@
+var cargarPagina = function () {
+	$("#get-location").click(obtenerUbicacion);
+	mostrar(arrayRestaurante);
+	 // $(document).on( "click" , ".busqueda", cambiarUbicacion);
+	// $(".busqueda").click(cambiarUbicacion);
+	$("form").submit(busqueda);
+	$(document).on( "click" , ".busqueda", cambiarUbicacion);
+};
+
+
 var arrayRestaurante= [];
 
 function Restaurante (nombre,foto,direccion,coordenadas, tipoComida) {
@@ -58,8 +68,10 @@ var busqueda = function (e){
 		$("#listaRestaurant").html($mensaje);
 	}else
 	{
-		
+
 		mostrar(resultadosBusqueda);
+
+		
 	}
 	
 }
@@ -95,7 +107,7 @@ function cambiarUbicacion() {
 
    var latitud = $(this).data("latitud");
    
-   console.log(latitud);
+   
    var longitud = $(this).data("longitud");
   	console.log(longitud);
   var coordenadas = {
@@ -106,13 +118,6 @@ function cambiarUbicacion() {
   
   mostrarMapa(coordenadas);
  }
-var cargarPagina = function () {
-	$("#get-location").click(obtenerUbicacion);
-	mostrar(arrayRestaurante);
-	$(".busqueda").click(cambiarUbicacion);
-	$("form").submit(busqueda);
-};
 
 
 $(document).ready(cargarPagina);
-
